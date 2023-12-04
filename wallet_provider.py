@@ -243,9 +243,15 @@ def wallet_attestation_endpoint(red):
 
 
 def wallet_configuration_endpoint():
+    print('request header =', request.headers)
     try:
-        user_email = request.authorization['username']
-        user_password = request.authorization['password']
+        Authorization = request.headers['Authorization']
+        basic = base64.b64decode(Authorization.split()[1].encode()).decode()
+        payload = Authorization.split()[1]
+        payload += "=" * ((4 - len(payload) % 4) % 4)
+        basic = base64.urlsafe_b64decode(payload.encode()).decode()
+        user_email = basic.split(':')[0]
+        user_password = basic.split(':')[1]
     except Exception as e:
         return Response(**manage_error('invalid_request', 'basic authentication missing or incorrect -> ' + str(e)))
     
