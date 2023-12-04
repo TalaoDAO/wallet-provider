@@ -1,6 +1,7 @@
 Flask
 Flask-Session
 Flask-QRcode
+Flask-Limiter
 smtplib
 codecs
 logging

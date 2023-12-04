@@ -1,6 +1,6 @@
 {
-    "version": "1.6",
-    "published": "2023-11-28",
+    "version": "1.8",
+    "published": "2023-12-03",
     "generalOptions": {
         "walletType": "altme",
         "companyName": "Altme",
@@ -8,6 +8,7 @@
         "companyLogo": "https://talao.co/static/img/icon.png",
         "profileName": "Wallet Profile Demo",
         "profileVersion": "1.0",
+        "profileId": "urn:uuid:lkjhj",
         "customerPlan": "free"
     },
     "settingsMenu": {

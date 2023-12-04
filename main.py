@@ -17,6 +17,8 @@ import string
 import message
 import wallet_provider
 
+
+
 logging.basicConfig(level=logging.INFO)
 myenv = os.getenv('MYENV')
 if not myenv:
@@ -40,6 +42,7 @@ app.config['SESSION_TYPE'] = 'redis'  # Redis server side session
 app.config['SESSION_FILE_THRESHOLD'] = 100
 sess = Session()
 sess.init_app(app)
+
 """
 Init OpenID Connect client PYOIDC with the 3 bridge parameters :  client_id, client_secret and issuer URL
 """
